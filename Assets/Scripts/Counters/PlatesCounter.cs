@@ -17,11 +17,11 @@ public class PlatesCounter : BaseCounter
     private void Update()
     {
         spawnPlateTimer += Time.deltaTime;
-        if(spawnPlateTimer > spawnPlateTimerMax)
+        if (spawnPlateTimer > spawnPlateTimerMax)
         {
             spawnPlateTimer = 0f;
 
-            if(platesSpawnedAmount < platesSpawnedAmountMax)
+            if (platesSpawnedAmount < platesSpawnedAmountMax)
             {
                 platesSpawnedAmount++;
 
@@ -32,10 +32,10 @@ public class PlatesCounter : BaseCounter
 
     public override void Interact(Player player)
     {
-        if(!player.HasKitchenObject())
+        if (!player.HasKitchenObject())
         {
             // Player is empty handed
-            if(platesSpawnedAmount > 0)
+            if (platesSpawnedAmount > 0)
             {
                 // There's at least one plate here
                 platesSpawnedAmount--;
